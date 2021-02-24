@@ -67,4 +67,14 @@ public class TestStringCalculator {
         }
         assertEquals(1, calc.GetCalledCount());
     }
+
+    @Test
+    void testMultiCharacterDelimiter() {
+        try {
+            assertEquals(6, calc.Add("//[--]\n1--2--3"));
+            assertEquals(10, calc.Add("//[***]\n5***2***3"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
