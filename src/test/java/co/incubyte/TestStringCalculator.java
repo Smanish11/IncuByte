@@ -13,4 +13,10 @@ public class TestStringCalculator {
         // No numbers
         assertEquals(0, calc.Add(""));
     }
+
+    @Test
+    void testMoreThanOneNumbers() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(7, calc.Add("1,1,2,3"));
+    }
 }
