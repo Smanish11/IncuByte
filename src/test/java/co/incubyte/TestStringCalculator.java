@@ -1,12 +1,11 @@
 package co.incubyte;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
 public class TestStringCalculator {
-    StringCalculator calc = new StringCalculator();
+    private StringCalculator calc = new StringCalculator();
 
     @Test
     void testZeroOrOneDigits() {
@@ -56,5 +55,16 @@ public class TestStringCalculator {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    void testCallCount() {
+        assertEquals(0, calc.GetCalledCount());
+        try {
+            calc.Add("12");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        assertEquals(1, calc.GetCalledCount());
     }
 }

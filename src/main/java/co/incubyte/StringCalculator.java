@@ -1,7 +1,16 @@
 package co.incubyte;
 
 public class StringCalculator {
+    private int addCallCounter = 0;
+
+    public int GetCalledCount() {
+        return addCallCounter;
+    }
+
     public int Add(String number) throws Exception {
+        // Incrementing call counter
+        ++addCallCounter;
+
         int sum = 0; // variable to store sum
         String[] num = new String[number.length()]; // for splited elemnts
         String delimiter = ",";
