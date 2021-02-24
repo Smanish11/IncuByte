@@ -10,6 +10,12 @@ public class StringCalculator {
         if (number == "")
             return 0;
 
+        if (number.charAt(0) == '/' && number.charAt(1) == '/') { // handle [delimiter]/n[number] (step VII)
+            delimiter = String.valueOf(number.charAt(2));
+            number = number.substring(4);
+
+        }
+
         number = number.replaceAll("\n", ","); // replace all new lines with ","
 
         // Insert splited digits in a sting array
