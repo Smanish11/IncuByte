@@ -6,12 +6,13 @@ public class StringCalculator {
         String[] num = new String[number.length()]; // for splited elemnts
         String delimiter = ",";
 
-        // Adding empty String (step I)
-        if (number == "") {
+        // Adding empty String
+        if (number == "")
             return 0;
-        }
 
-        // insert splited digits in a sting array(stepIII)
+        number = number.replaceAll("\n", ","); // replace all new lines with ","
+
+        // Insert splited digits in a sting array
         for (int i = 0; i < number.length(); i++) {
             num = number.split(delimiter);
         }

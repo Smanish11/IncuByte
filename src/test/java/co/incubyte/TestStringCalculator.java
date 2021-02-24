@@ -19,4 +19,11 @@ public class TestStringCalculator {
         StringCalculator calc = new StringCalculator();
         assertEquals(7, calc.Add("1,1,2,3"));
     }
+
+    @Test
+    void testHandleNewline() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.Add("1\n2,3"));
+        assertEquals(10, calc.Add("1,2\n3,4"));
+    }
 }
