@@ -77,4 +77,14 @@ public class TestStringCalculator {
             e.printStackTrace();
         }
     }
+
+    @Test
+    void testMultipleMultiCharacterDelimiter() {
+        try {
+            assertEquals(6, calc.Add("//[--][++]\n1--2++3"));
+            assertEquals(10, calc.Add("//[***][##]\n5##2***3"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

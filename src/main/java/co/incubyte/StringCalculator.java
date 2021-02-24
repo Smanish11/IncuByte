@@ -22,9 +22,23 @@ public class StringCalculator {
             return 0;
 
         if (number.charAt(0) == '/' && number.charAt(1) == '/') {
-            delimiter = number.split("\n")[0];
-            delimiter = delimiter.substring(3, delimiter.length() - 1);
-            number = number.substring(3 + delimiter.length() + 2);
+            String delimiters = number.split("\n")[0];
+            String secondDelimiter = null;
+
+            // Getting delimiter
+            delimiter = delimiters.substring(3, number.indexOf("]"));
+            delimiters = delimiters.substring(number.indexOf("]") + 1);
+
+            // Getting rest of the numbers after delimiter
+            number = number.substring(number.indexOf("\n") + 1);
+
+            // Checking for second delimiter
+            if (delimiters.charAt(0) == '[')
+                secondDelimiter = delimiters.substring(1, delimiters.length() - 1);
+
+            // If second delimiter exists, replacing it with first delimiter
+            if (secondDelimiter != null)
+                number = number.replaceAll(Pattern.quote(secondDelimiter), delimiter);
             delimiter = Pattern.quote(delimiter);
         }
 
