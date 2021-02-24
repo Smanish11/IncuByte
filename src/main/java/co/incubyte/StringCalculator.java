@@ -17,6 +17,7 @@ public class StringCalculator {
         }
 
         number = number.replaceAll("\n", ","); // replace all new lines with ","
+        number = number.replaceAll("\n", delimiter); // replace all new lines with given delimiter
 
         // Insert splited digits in a sting array
         for (int i = 0; i < number.length(); i++) {
