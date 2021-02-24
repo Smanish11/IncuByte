@@ -8,7 +8,9 @@ public class TestStringCalculator {
     @Test
     void testZeroOrOneDigits() {
         StringCalculator calc = new StringCalculator();
+        // Only 1 number
         assertEquals(6, calc.Add("6"));
+        // No numbers
         assertEquals(0, calc.Add(""));
     }
 }
